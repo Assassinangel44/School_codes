@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+int main()
+{
+	locale loc;
+	char unit;
+	float mpg, d, gas, travelCost, kms;
+	cout << "Input actual gas price: \n";
+	cin >> gas;
+	cout << "Input your car's average mpg: \n";
+	cin >> mpg;
+	cout << "Input the distance of travel: \n";
+	cin >> d;
+	kms = d * 0.621371;
+	cout << "input the distance unit in miles or kilometers (type m or k): \n";
+	cin >> unit;
+	 if(tolower(unit, loc) == 'm')
+        {
+         travelCost = ((d/mpg)*gas);
+	     cout << "Your travel will cost: " << travelCost;
+        }
+     else if(tolower(unit, loc) == 'k')
+        {
+         travelCost = ((kms/mpg)*gas);
+	     cout << "Your travel will cost: $ " << travelCost;
+        }
+	
+	return 0;
+}
